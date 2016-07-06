@@ -112,7 +112,7 @@ class Mocospace(th):
             getattr(self._mgr, evt)(*args, **kw)
 
     def _disconnect(self):
-        self._callEvent("onDisconnect", self)
+        self._callEvent("0onDisconnect", self)
         sys.exit()
 
     def _connect(self):
@@ -166,8 +166,7 @@ class Mocospace(th):
             for data in event:
                 if data['name'] == name:
                     return data['uid']
-                else:
-                    return None
+            return None
 
     def startThread(self):
         self.start()
